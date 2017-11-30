@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 5000
 
 let app = express()
 
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
     res.send(JSON.stringify(req.headers))
 })
 
