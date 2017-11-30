@@ -4,12 +4,19 @@ const PORT = process.env.PORT || 5000
 
 let app = express()
 
-app.get('*', (req, res) => {
-    res.send(JSON.stringify(req.headers))
+
+app.post('/link', (req, res) => {
+    res.send(JSON.stringify({
+        headers: req.headers,
+        body: JSON.parse(req.body)
+    }))
 })
 
-app.post('*', (req, res) => {
-    res.send(JSON.stringify(req.headers))
+app.post('/fulfillment', (req, res) => {
+    res.send(JSON.stringify({
+        headers: req.headers,
+        body: JSON.parse(req.body)
+    }))
 })
 
 app.listen(PORT, () => console.log(`Listening on ${PORT}`))
