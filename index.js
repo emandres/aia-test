@@ -46,4 +46,8 @@ app.post('/fulfillment', (req, res) => {
     res.send(JSON.stringify(response))
 })
 
+app.get('/registration', (req, res) => {
+    res.send(JSON.stringify({headers: req.headers}))
+})
+
 app.listen(PORT, () => console.log(`Listening on ${PORT}`))
