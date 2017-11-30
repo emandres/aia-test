@@ -8,14 +8,14 @@ let app = express()
 app.post('/link', (req, res) => {
     res.send(JSON.stringify({
         headers: req.headers,
-        body: JSON.parse(req.body)
+        body: req.body
     }))
 })
 
 app.post('/fulfillment', (req, res) => {
     res.send(JSON.stringify({
         headers: req.headers,
-        body: JSON.parse(req.body)
+        body: req.body
     }))
 })
 
