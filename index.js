@@ -8,4 +8,8 @@ app.get('*', (req, res) => {
     res.send(JSON.stringify(req.headers))
 })
 
+app.post('*', (req, res) => {
+    res.send(JSON.stringify(req.headers))
+})
+
 app.listen(PORT, () => console.log(`Listening on ${PORT}`))
