@@ -8,10 +8,12 @@ let app = express()
 app.use(bodyParser.json())
 
 app.post('/link', (req, res) => {
-    res.send(JSON.stringify({
-        headers: req.headers,
-        body: req.body
-    }))
+    if (req.body.infoField1 === "foo@bar.com") {
+        res.send(JSON.stringify({response: "OK", "userId": "abc123"}))
+    }
+    else {
+        res.send(JSON.stringify({ response: "FAIL_ACCOUNT_INVALID" }))
+    }
 })
 
 app.post('/fulfillment', (req, res) => {
